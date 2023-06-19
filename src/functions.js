@@ -23,7 +23,9 @@ function get_parameters() {
         var urlParam = params.get('url'); // "https://albaher.mahjoz.net"
         var buttonText = params.get('button_text'); // "BookMe"
         var buttonTextColor = params.get('button_text_color'); // "fff"
-        var buttonBackgroundColor = params.get('button_backgroud_color'); // "000"
+        var buttonBackgroundColor = params.get('button_backgroud_color');
+        var embed_type = params.get('embed_type');
+        var embeded = params.get('embeded');
 
         buttonTextColor = decodeURIComponent(buttonTextColor); // "#ffff"
         buttonBackgroundColor = decodeURIComponent(buttonBackgroundColor); // "#0000"
@@ -33,7 +35,9 @@ function get_parameters() {
         'url': urlParam,
         'button_text': buttonText,
         'button_text_color': buttonTextColor,
-        'button_backgroud_color': buttonBackgroundColor
+        'button_backgroud_color': buttonBackgroundColor,
+        'embed_type' : embed_type,
+        'embeded' : embeded
     }
 }
 
@@ -68,12 +72,12 @@ function add_onlick_event(button, params) {
         closeOverlay.className = "mahjoz-close-overlay";
         popup.className = "mahjoz-popup";
         popupContent.className = "mahjoz-popup-content";
-        popupContent.dataset.url = "https://albaher.mahjoz.net/?embeded=1";
+        popupContent.dataset.url = params.url;
         spinner.className = "mahjoz-spinner";
         bounce1.className = "mahjoz-bounce1";
         bounce2.className = "mahjoz-bounce2";
         bounce3.className = "mahjoz-bounce3";
-        iframe.src = `https://albaher.mahjoz.net/?embed_domain=${params.url}&embed_type=${params.embed_type ?? 'PopupWidgetsdf'}PopupWidget&embeded=${params.embeded ?? 1}`;
+        iframe.src = `${params.url}/?embed_domain=${params.url}&embed_type=${params.embed_type ?? 'PopupWidget'}PopupWidget&embeded=${params.embeded ?? 1}`;
         iframe.width = "100%";
         iframe.height = "100%";
         iframe.frameBorder = "0";
