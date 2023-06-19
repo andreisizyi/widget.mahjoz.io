@@ -77,7 +77,7 @@ function add_onlick_event(button, params) {
         bounce1.className = "mahjoz-bounce1";
         bounce2.className = "mahjoz-bounce2";
         bounce3.className = "mahjoz-bounce3";
-        iframe.src = `${params.url}/?embed_domain=${params.url}&embed_type=${params.embed_type ?? 'PopupWidget'}PopupWidget&embeded=${params.embeded ?? 1}`;
+        iframe.src = `${params.url}/?embeded=${params.embeded ?? 1}`;
         iframe.width = "100%";
         iframe.height = "100%";
         iframe.frameBorder = "0";

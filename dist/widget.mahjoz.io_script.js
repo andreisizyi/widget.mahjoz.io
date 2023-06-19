@@ -60,7 +60,7 @@ function add_button(buttonText, buttonTextColor, buttonBackgroundColor) {
 }
 function add_onlick_event(button, params) {
   button.addEventListener('click', function (event) {
-    var _params$embed_type, _params$embeded;
+    var _params$embeded;
     document.body.style.overflow = 'hidden';
     var overlay = document.createElement('div');
     var closeOverlay = document.createElement('div');
@@ -81,7 +81,7 @@ function add_onlick_event(button, params) {
     bounce1.className = "mahjoz-bounce1";
     bounce2.className = "mahjoz-bounce2";
     bounce3.className = "mahjoz-bounce3";
-    iframe.src = "".concat(params.url, "/?embed_domain=").concat(params.url, "&embed_type=").concat((_params$embed_type = params.embed_type) !== null && _params$embed_type !== void 0 ? _params$embed_type : 'PopupWidget', "PopupWidget&embeded=").concat((_params$embeded = params.embeded) !== null && _params$embeded !== void 0 ? _params$embeded : 1);
+    iframe.src = "".concat(params.url, "/?embeded=").concat((_params$embeded = params.embeded) !== null && _params$embeded !== void 0 ? _params$embeded : 1);
     iframe.width = "100%";
     iframe.height = "100%";
     iframe.frameBorder = "0";
